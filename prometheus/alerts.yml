@@ -1,0 +1,28 @@
+groups:
+  - name: system_alerts
+
+    rules:
+      - alert: HighCPUUsage
+
+        expr: 100 - (avg by(instance)
+          (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+
+        for: 1m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: High CPU Usage
+          description: CPU usage is above 80%
+
+      - alert: HighMemoryUsage
+        expr: (100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))) > 75
+        for: 1m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: High Memory Usage
+          description: Memory usage is above 75%
