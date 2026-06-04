@@ -1,26 +1,106 @@
 # Monitoring & Observability System
 
-## Overview
-This project demonstrates infrastructure monitoring using Prometheus, Grafana, and Docker.
+A monitoring and observability solution built using Prometheus, Grafana, Docker, and Node Exporter to monitor system performance metrics such as CPU, memory, and disk utilization.
 
-## Objectives
-- Collect system metrics
-- Monitor CPU, Memory, and Disk usage
-- Create Grafana dashboards
-- Configure alerting for resource utilization
+## Features
+
+* Real-time monitoring of CPU, memory, and disk usage
+* Metrics collection using Node Exporter
+* Data storage and querying with Prometheus
+* Interactive Grafana dashboards
+* Alert rules for high CPU and memory utilization
+* Persistent Grafana storage using Docker volumes
 
 ## Tech Stack
-- Docker
-- Prometheus
-- Grafana
-- Node Exporter
 
-## Planned Features
-- CPU Monitoring Dashboard
-- Memory Monitoring Dashboard
-- Disk Usage Dashboard
-- Alerting Rules
-- Infrastructure Health Monitoring
+* Docker
+* Prometheus
+* Grafana
+* Node Exporter
 
-## Status
-🚧 Currently under development
+## Project Structure
+
+```
+monitoring-observability-system
+│
+├── prometheus
+│   ├── prometheus.yml
+│   └── alerts.yml
+│
+├── screenshots
+│   ├── dashboard-overview.png
+│   ├── cpu-monitoring.png
+│   ├── memory-monitoring.png
+│   └── alert-monitoring.png
+│
+├── docker-compose.yml
+└── README.md
+```
+
+## Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/suyash-5613/monitoring-observability-system.git
+cd monitoring-observability-system
+```
+
+### Start Services
+
+```bash
+docker compose up -d
+```
+
+### Access Applications
+
+Prometheus:
+
+```
+http://localhost:9090
+```
+
+Grafana:
+
+```
+http://localhost:3000
+```
+
+## Dashboard Preview
+
+### Infrastructure Monitoring Dashboard
+
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+### CPU Monitoring
+
+![CPU Monitoring](screenshots/cpu-monitoring.png)
+
+### Memory Monitoring
+
+![Memory Monitoring](screenshots/memory-monitoring.png)
+
+
+## Alerting
+
+The project includes alert rules for:
+
+* High CPU Usage
+* High Memory Usage
+
+Prometheus continuously evaluates these rules and generates alerts when thresholds are exceeded.
+
+## Learning Outcomes
+
+Through this project I gained hands-on experience with:
+
+* Prometheus metrics collection and monitoring
+* Grafana dashboard creation
+* Infrastructure observability concepts
+* Docker container management
+* Alert configuration and monitoring workflows
+* System performance analysis
+
+## Author
+
+Suyash Sahu
